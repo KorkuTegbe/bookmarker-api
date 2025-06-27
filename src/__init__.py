@@ -12,7 +12,7 @@ def create_app(test_config=None):
    if test_config is None:
       app.config.from_mapping(
          SECRET_KEY=os.environ.get("SECRET_KEY "), #'dev',
-         SQLALCHEMY_DB_URI=os.environ.get('SQLALCHEMY_DB_URL'),
+         SQLALCHEMY_DB_URI= 'sqlite:///bookmarks.db',#os.environ.get('SQLALCHEMY_DB_URL'),
          JWT_SECRET_KEY=os.environ.get('JWT_SECRET_KEY')
       )
    else:
