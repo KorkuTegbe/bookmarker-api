@@ -4,11 +4,11 @@ FROM python:3.11-slim
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
-ENV SECRET_KEY=kjeknfknkl23j4knkfnkr2ojfknfkjo4jrnk@
+ENV SECRET_KEY='kd'
 ENV SQLALCHEMY_DATABASE_URI=sqlite:///bookmarks.db
 
 # Create working directory
-WORKDIR /app
+WORKDIR /src
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
@@ -27,4 +27,5 @@ COPY . .
 EXPOSE 5000
 
 # Command to run app using Gunicorn
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "src.runner:application"]
+# CMD ["gunicorn", "--bind", "0.0.0.0:5000", "src.runner:application"]
+CMD ['flask', 'run', '--host=0.0.0.0']
