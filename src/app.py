@@ -1,9 +1,9 @@
 import os
 from flask_jwt_extended import JWTManager
 from flask import Flask, redirect, jsonify, send_file
-from database import db, Bookmark
-from auth import auth
-from bookmarks import bookmarks
+from src.database import db, Bookmark
+from src.auth import auth
+from src.bookmarks import bookmarks
 from datetime import timedelta
 from constants.status_codes import HTTP_404_NOT_FOUND, HTTP_500_INTERNAL_SERVER_ERROR
 from flask_swagger_ui import get_swaggerui_blueprint
