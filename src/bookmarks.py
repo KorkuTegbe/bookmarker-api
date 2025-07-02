@@ -1,8 +1,8 @@
 from flask import Blueprint, request, jsonify
 import validators
 from flask_jwt_extended import get_jwt_identity, jwt_required
-from constants.status_codes import HTTP_200_OK, HTTP_401_UNAUTHORIZED, HTTP_400_BAD_REQUEST, HTTP_201_CREATED, HTTP_404_NOT_FOUND, HTTP_409_CONFLICT
-from database import db, Bookmark
+from src.constants.status_codes import HTTP_200_OK, HTTP_401_UNAUTHORIZED, HTTP_400_BAD_REQUEST, HTTP_201_CREATED, HTTP_404_NOT_FOUND, HTTP_409_CONFLICT
+from src.database import db, Bookmark
 
 
 bookmarks = Blueprint('bookmarks', __name__, url_prefix="/api/v1/bookmarks")
